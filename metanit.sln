@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34003.232
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "metanit", "metanit.csproj", "{EABDD05E-F87D-4D39-AB38-2A389B9FD4ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EABDD05E-F87D-4D39-AB38-2A389B9FD4ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EABDD05E-F87D-4D39-AB38-2A389B9FD4ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EABDD05E-F87D-4D39-AB38-2A389B9FD4ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EABDD05E-F87D-4D39-AB38-2A389B9FD4ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DAE330D3-2F69-4DDC-979C-90ABF9E56083}
+	EndGlobalSection
+EndGlobal
