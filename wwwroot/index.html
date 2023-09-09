@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>METANIT.COM</title>
+    <title></title>
     <style>
         td {
             padding: 5px;
@@ -40,7 +40,7 @@
     // Получение всех пользователей
         async function getUsers() {
             // отправляет запрос и получаем ответ
-            const response = await fetch("/api/users", {
+            const response = await fetch("/api/Person", {
                 method: "GET",
                 headers: { "Accept": "application/json" }
             });
@@ -55,7 +55,7 @@
         }
         // Получение одного пользователя
         async function getUser(id) {
-            const response = await fetch(`/api/users/${id}`, {
+            const response = await fetch(`/api/Person/${id}`, {
                 method: "GET",
                 headers: { "Accept": "application/json" }
             });
@@ -74,7 +74,7 @@
         // Добавление пользователя
         async function createUser(userName, userAge) {
 
-            const response = await fetch("api/users", {
+            const response = await fetch("api/Person", {
                 method: "POST",
                 headers: { "Accept": "application/json", "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -93,7 +93,7 @@
         }
         // Изменение пользователя
         async function editUser(userId, userName, userAge) {
-            const response = await fetch("api/users", {
+            const response = await fetch("api/Person", {
                 method: "PUT",
                 headers: { "Accept": "application/json", "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -113,7 +113,7 @@
         }
         // Удаление пользователя
         async function deleteUser(id) {
-            const response = await fetch(`/api/users/${id}`, {
+            const response = await fetch(`/api/Person/${id}`, {
                 method: "DELETE",
                 headers: { "Accept": "application/json" }
             });
