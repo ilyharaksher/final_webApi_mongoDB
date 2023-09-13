@@ -1,5 +1,4 @@
-﻿using metanit.Controllers;
-using metanit.Models;
+﻿using metanit.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 

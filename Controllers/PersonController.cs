@@ -1,9 +1,7 @@
 ﻿using metanit.Models;
-using metanit.Controllers;
 using metanit.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-using MongoDB.Driver;
+
 
 namespace metanit.Controllers
 {

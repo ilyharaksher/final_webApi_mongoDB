@@ -93,7 +93,7 @@
         }
         // Changing user
         async function editUser(userId, userName, userAge) {
-            const response = await fetch("api/Person", {
+            const response = await fetch(`/api/Person/${userId}`, {
                 method: "PUT",
                 headers: { "Accept": "application/json", "Content-Type": "application/json" },
                 body: JSON.stringify({
