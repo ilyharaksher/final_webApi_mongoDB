@@ -14,46 +14,46 @@
     </style>
 </head>
 <body>
-    <h2>Список пользователей</h2>
+    <h2>List of users</h2>
     <div>
         <input type="hidden" id="userId" />
         <p>
-            Имя:<br />
+            Name:<br />
             <input id="userName" />
         </p>
         <p>
-            Возраст:<br />
+            Age:<br />
             <input id="userAge" type="number" />
         </p>
         <p>
-            <button id="saveBtn">Сохранить</button>
-            <button id="resetBtn">Сбросить</button>
+            <button id="saveBtn">Save</button>
+            <button id="resetBtn">Reset</button>
         </p>
     </div>
     <table>
-        <thead><tr><th>Имя</th><th>Возраст</th><th></th></tr></thead>
+        <thead><tr><th>Name<th><th>Age</th><th></th></tr></thead>
         <tbody>
         </tbody>
     </table>
 
     <script>
-    // Получение всех пользователей
+    // Getting all users
         async function getUsers() {
-            // отправляет запрос и получаем ответ
+            // Sending request and receiving response
             const response = await fetch("/api/Person", {
                 method: "GET",
                 headers: { "Accept": "application/json" }
             });
-            // если запрос прошел нормально
+            // If response is ok
             if (response.ok === true) {
-                // получаем данные
+                // getting data
                 const users = await response.json();
                 const rows = document.querySelector("tbody");
-                // добавляем полученные элементы в таблицу
+                // Adding elements to table
                 users.forEach(user => rows.append(row(user)));
             }
         }
-        // Получение одного пользователя
+        // Getting one user
         async function getUser(id) {
             const response = await fetch(`/api/Person/${id}`, {
                 method: "GET",
@@ -66,12 +66,12 @@
                 document.getElementById("userAge").value = user.age;
             }
             else {
-                // если произошла ошибка, получаем сообщение об ошибке
+                // In case of error we receive error message
                 const error = await response.json();
-                console.log(error.message); // и выводим его на консоль
+                console.log(error.message); //Printing error to console
             }
         }
-        // Добавление пользователя
+        //Adding user
         async function createUser(userName, userAge) {
 
             const response = await fetch("api/Person", {
@@ -91,7 +91,7 @@
                 console.log(error.message);
             }
         }
-        // Изменение пользователя
+        // Changing user
         async function editUser(userId, userName, userAge) {
             const response = await fetch("api/Person", {
                 method: "PUT",
@@ -111,7 +111,7 @@
                 console.log(error.message);
             }
         }
-        // Удаление пользователя
+        // Deleting user
         async function deleteUser(id) {
             const response = await fetch(`/api/Person/${id}`, {
                 method: "DELETE",
@@ -127,13 +127,13 @@
             }
         }
 
-        // сброс данных формы после отправки
+        // Reseting input form after request
         function reset() {
             document.getElementById("userId").value =
             document.getElementById("userName").value =
             document.getElementById("userAge").value = "";
         }
-        // создание строки для таблицы
+        // Adding row to table
         function row(user) {
 
             const tr = document.createElement("tr");
@@ -150,12 +150,12 @@
             const linksTd = document.createElement("td");
 
             const editLink = document.createElement("button");
-            editLink.append("Изменить");
+            editLink.append("Change");
             editLink.addEventListener("click", async() => await getUser(user.id));
             linksTd.append(editLink);
 
             const removeLink = document.createElement("button");
-            removeLink.append("Удалить");
+            removeLink.append("Delete");
             removeLink.addEventListener("click", async () => await deleteUser(user.id));
 
             linksTd.append(removeLink);
@@ -163,10 +163,10 @@
 
             return tr;
         }
-        // сброс значений формы
+        // Reseting form
         document.getElementById("resetBtn").addEventListener("click", () =>  reset());
 
-        // отправка формы
+        // Sending form
         document.getElementById("saveBtn").addEventListener("click", async () => {
 
             const id = document.getElementById("userId").value;
@@ -179,7 +179,7 @@
             reset();
         });
 
-        // загрузка пользователей
+        // getting users
         getUsers();
     </script>
 </body>

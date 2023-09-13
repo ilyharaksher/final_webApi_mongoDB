@@ -1,11 +1,12 @@
 using MongoDB.Driver;
 using metanit.Models;
 using metanit.Controllers;
+using metanit.Services;
 
 //var client = new MongoClient("mongodb://localhost:27017");  // определяем клиент
 //var db = client.GetDatabase("test");    // определяем объект базы данных
 //var collectionName = "users";   // имя коллекции
- 
+
 var builder = WebApplication.CreateBuilder(args);
 
 
